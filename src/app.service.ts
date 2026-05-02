@@ -15,7 +15,7 @@ export class AppService {
     @InjectRepository(Post) private postRepository: Repository<Post>,
     @InjectRepository(Group) private groupRepository: Repository<Group>,
     @InjectRepository(Tag) private tagRepository: Repository<Tag>,
-  ) {}
+  ) { }
 
   getHello(): string {
     return 'Hello World!';
@@ -32,7 +32,7 @@ export class AppService {
 
     // 2. Группы
     const groupDevs = await this.groupRepository.save({ name: 'Developers' });
-    const groupDesigners = await this.groupRepository.save({ name: 'Designers' }); // В эту группу никого не добавим
+    // const groupDesigners = await this.groupRepository.save({ name: 'Designers' }); // В эту группу никого не добавим
 
     // 3. Профили
     const profileA = this.profileRepository.create({ bio: 'I am User A, I have everything', avatarUrl: 'avatarA.jpg' });
@@ -40,7 +40,7 @@ export class AppService {
     await this.profileRepository.save([profileA, orphanProfile]);
 
     // 4. Пользователи с разным набором данных
-    
+
     // User A: Есть профиль, есть 2 поста, есть группа
     const userA = this.userRepository.create({
       name: 'User A (Full)',
@@ -71,7 +71,7 @@ export class AppService {
     });
     await this.userRepository.save(userC);
 
-    return { 
+    return {
       message: 'Database seeded with diverse data for JOIN testing!',
       details: {
         users: ['User A (Profile+Posts)', 'User B (Posts only)', 'User C (Nothing)'],

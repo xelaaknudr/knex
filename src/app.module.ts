@@ -10,6 +10,12 @@ import { Post } from './entities/post.entity';
 import { Group } from './entities/group.entity';
 import { Tag } from './entities/tag.entity';
 
+
+
+
+
+
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -22,4 +28,4 @@ import { Tag } from './entities/tag.entity';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

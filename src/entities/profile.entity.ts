@@ -6,10 +6,10 @@ export class Profile {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: true })
+  @Column({ nullable: false })
   bio: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: false })
   avatarUrl: string;
 
   // OneToOne указывает, что один профиль принадлежит ровно одному пользователю.
